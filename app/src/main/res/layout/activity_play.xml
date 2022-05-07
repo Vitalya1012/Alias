@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_pink"
+    tools:context=".PlayActivity">
+
+    <TextView
+        android:id="@+id/textViewTeam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="32sp"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/textViewWord"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewTeam1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="48sp"
+        android:text="@string/default_team1_name"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewGuessedCountTeam1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16sp"
+        android:text="0"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="@+id/textViewTeam1"
+        app:layout_constraintStart_toStartOf="@+id/textViewTeam1"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTeam1" />
+
+    <TextView
+        android:id="@+id/textViewTeam2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="48sp"
+        android:text="@string/default_team2_name"
+        android:textColor="@color/red"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewGuessedCountTeam2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16sp"
+        android:text="0"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="@+id/textViewTeam2"
+        app:layout_constraintStart_toStartOf="@+id/textViewTeam2"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTeam2" />
+
+    <TextView
+        android:id="@+id/textViewWord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewTime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewGuessedCountTeam2" />
+
+    <TextView
+        android:id="@+id/textViewTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+
+        <Button
+            android:id="@+id/buttonOk"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/red"
+            android:textSize="18sp"
+            android:visibility="invisible"
+            android:onClick="nextYes"
+            android:text="угадал" />
+
+        <Button
+            android:id="@+id/buttonSkip"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/red"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:visibility="invisible"
+            android:onClick="nextNo"
+            android:text="пропустить" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonStartTimer"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_margin="8sp"
+        android:text="Поехали"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/red"
+        android:textSize="18sp"
+        android:visibility="visible"
+        android:onClick="startTimer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/buttonLayout" />
+
+    <Button
+        android:id="@+id/buttonRestart"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_margin="8sp"
+        android:text="Начать заново"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/red"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        android:onClick="restart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/buttonLayout" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
